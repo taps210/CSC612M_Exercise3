@@ -1,0 +1,1163 @@
+log/default/ADCprecision=5/batch_size=8/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=1.46/nonlinearityLTP=1.75/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5
+=================FLAGS==================
+type: cifar10
+batch_size: 8
+epochs: 2
+grad_scale: 1
+seed: 117
+log_interval: 100
+test_interval: 1
+logdir: log/default/ADCprecision=5/batch_size=8/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=1.46/nonlinearityLTP=1.75/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5
+decreasing_lr: 200,250
+wl_weight: 5
+wl_grad: 5
+wl_activate: 8
+wl_error: 8
+inference: 0
+onoffratio: 10
+cellBit: 5
+subArray: 128
+ADCprecision: 5
+vari: 0
+t: 0
+v: 0
+detect: 0
+target: 0
+nonlinearityLTP: 1.75
+nonlinearityLTD: 1.46
+max_level: 32
+d2dVari: 0.0
+c2cVari: 0.003
+========================================
+Building CIFAR-10 data loader with 0 workers
+Files already downloaded and verified
+Files already downloaded and verified
+fan_in     27, float_limit 0.333333, quant limit 1.5, scale 4
+fan_in   1152, float_limit 0.051031, quant limit 1.5, scale 32
+fan_in   1152, float_limit 0.051031, quant limit 1.5, scale 32
+fan_in   2304, float_limit 0.036084, quant limit 1.5, scale 32
+fan_in   2304, float_limit 0.036084, quant limit 1.5, scale 32
+fan_in   4608, float_limit 0.025516, quant limit 1.5, scale 64
+fan_in   8192, float_limit 0.019137, quant limit 1.5, scale 64
+fan_in   1024, float_limit 0.054127, quant limit 1.5, scale 32
+Sequential(
+  (0): QConv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (1): ReLU()
+  (2): QConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (3): ReLU()
+  (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (5): QConv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (6): ReLU()
+  (7): QConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (8): ReLU()
+  (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (10): QConv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (11): ReLU()
+  (12): QConv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (13): ReLU()
+  (14): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+)
+Sequential(
+  (0): QLinear(in_features=8192, out_features=1024, bias=False)
+  (1): ReLU(inplace=True)
+  (2): QLinear(in_features=1024, out_features=10, bias=False)
+)
+decreasing_lr: [200, 250]
+training phase
+/home/anoobis/csc604m/DNN_NeuroSim_V2.1/Training_pytorch/utee/wage_quantizer.py:17: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /opt/conda/conda-bld/pytorch_1724789115405/work/torch/csrc/tensor/python_tensor.cpp:78.)
+  r = torch.cuda.FloatTensor(*x.size()).uniform_()
+Train Epoch: 0 [800/50000] Loss: 3.752213 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 0 [1600/50000] Loss: 3.379810 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [2400/50000] Loss: 3.407426 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [3200/50000] Loss: 3.506921 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [4000/50000] Loss: 3.476289 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [4800/50000] Loss: 3.306435 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [5600/50000] Loss: 3.400580 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [6400/50000] Loss: 3.517608 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [7200/50000] Loss: 3.733438 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [8000/50000] Loss: 2.854721 Acc: 0.6250 lr: 1.00e+00
+Train Epoch: 0 [8800/50000] Loss: 3.905311 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 0 [9600/50000] Loss: 3.029631 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [10400/50000] Loss: 3.128887 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [11200/50000] Loss: 3.096361 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [12000/50000] Loss: 3.525179 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [12800/50000] Loss: 3.330755 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [13600/50000] Loss: 3.556489 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [14400/50000] Loss: 3.913021 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 0 [15200/50000] Loss: 3.755999 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 0 [16000/50000] Loss: 3.358967 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [16800/50000] Loss: 3.159376 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [17600/50000] Loss: 3.135308 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [18400/50000] Loss: 3.511113 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [19200/50000] Loss: 3.554009 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [20000/50000] Loss: 3.433465 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [20800/50000] Loss: 3.481457 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [21600/50000] Loss: 3.214085 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [22400/50000] Loss: 3.769479 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [23200/50000] Loss: 3.193906 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [24000/50000] Loss: 3.223206 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 0 [24800/50000] Loss: 3.231102 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 0 [25600/50000] Loss: 3.306686 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [26400/50000] Loss: 2.840253 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [27200/50000] Loss: 3.544737 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [28000/50000] Loss: 3.169927 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [28800/50000] Loss: 3.320006 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [29600/50000] Loss: 3.468923 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 0 [30400/50000] Loss: 3.253537 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [31200/50000] Loss: 3.082227 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [32000/50000] Loss: 3.305319 Acc: 0.6250 lr: 1.00e+00
+Train Epoch: 0 [32800/50000] Loss: 3.156153 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [33600/50000] Loss: 3.591426 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [34400/50000] Loss: 3.217271 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [35200/50000] Loss: 2.907445 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 0 [36000/50000] Loss: 3.459295 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [36800/50000] Loss: 3.304037 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [37600/50000] Loss: 3.297403 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [38400/50000] Loss: 3.479210 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [39200/50000] Loss: 3.710966 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 0 [40000/50000] Loss: 3.386104 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 0 [40800/50000] Loss: 3.546044 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [41600/50000] Loss: 3.210005 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [42400/50000] Loss: 3.252045 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [43200/50000] Loss: 3.376189 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [44000/50000] Loss: 3.332332 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [44800/50000] Loss: 3.554431 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [45600/50000] Loss: 2.811344 Acc: 0.6250 lr: 1.00e+00
+Train Epoch: 0 [46400/50000] Loss: 3.283099 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [47200/50000] Loss: 3.253771 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [48000/50000] Loss: 3.551080 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 0 [48800/50000] Loss: 3.363896 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 0 [49600/50000] Loss: 3.684978 Acc: 0.2500 lr: 1.00e+00
+Elapsed 802.70s, 802.70 s/epoch, 0.13 s/batch, ets 802.70s
+weight distribution
+[-0.15033874 -0.22449327 -0.05243616 -0.10614309 -0.01372886 -0.14346579
+ -0.08691259  0.22121464  0.48166731  0.59250438  0.61549437  0.67702746
+  0.66328955  0.6974386   0.78267539  0.82563859]
+delta distribution
+[-2.27864576e-03 -6.18828708e-05  1.54707177e-05  4.21735967e-05
+  4.54584770e-05  2.19874914e-06 -4.47034836e-08  1.28173837e-04
+  2.75927223e-02  4.37901262e-03  2.84478022e-03  3.08358390e-03
+  4.07688878e-03  2.11862195e-03  1.08926813e-03  4.04825481e-03]
+testing phase
+	Epoch 0 Test set: Average loss: 3.3165, Accuracy: 2659/10000 (27%)
+Saving model to /home/anoobis/csc604m/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=8/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=1.46/nonlinearityLTP=1.75/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-0.pth
+------------------------------ FloorPlan --------------------------------
+
+Tile and PE size are optimized to maximize memory utilization ( = memory mapped by synapse / total memory on chip)
+
+Desired Conventional Mapped Tile Storage Size: 1024x1024
+Desired Conventional PE Storage Size: 512x512
+Desired Novel Mapped Tile Storage Size: 9x512x512
+User-defined SubArray Size: 128x128
+
+----------------- # of tile used for each layer -----------------
+layer1: 1
+layer2: 1
+layer3: 1
+layer4: 1
+layer5: 1
+layer6: 1
+layer7: 8
+layer8: 1
+
+----------------- Speed-up of each layer ------------------
+layer1: 64
+layer2: 16
+layer3: 8
+layer4: 4
+layer5: 2
+layer6: 1
+layer7: 1
+layer8: 8
+
+----------------- Utilization of each layer ------------------
+layer1: 0.210938
+layer2: 1
+layer3: 1
+layer4: 1
+layer5: 1
+layer6: 1
+layer7: 1
+layer8: 0.078125
+Memory Utilization of Whole Chip: 88.5938 % 
+
+---------------------------- FloorPlan Done ------------------------------
+
+
+
+-------------------------------------- Hardware Performance --------------------------------------
+-------------------- Estimation of Layer 1 ----------------------
+layer1's readLatency of Forward is: 7.96231e+09ns
+layer1's readDynamicEnergy of Forward is: 7.29459e+10pJ
+layer1's readLatency of Activation Gradient is: 0ns
+layer1's readDynamicEnergy of Activation Gradient is: 0pJ
+layer1's readLatency of Weight Gradient is: 1.81752e+09ns
+layer1's readDynamicEnergy of Weight Gradient is: 1.11504e+11pJ
+layer1's writeLatency of Weight Update is: 1.02654e+06ns
+layer1's writeDynamicEnergy of Weight Update is: 6.78827e+06pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer1's PEAK readLatency of Forward is: 1.16861e+08ns
+layer1's PEAK readDynamicEnergy of Forward is: 1.85e+10pJ
+layer1's PEAK readLatency of Activation Gradient is: 0ns
+layer1's PEAK readDynamicEnergy of Activation Gradient is: 0pJ
+layer1's PEAK readLatency of Weight Gradient is: 1.23285e+09ns
+layer1's PEAK readDynamicEnergy of Weight Gradient is: 8.76581e+10pJ
+layer1's PEAK writeLatency of Weight Update is: 1.0195e+06ns
+layer1's PEAK writeDynamicEnergy of Weight Update is: 6.69878e+06pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer1's leakagePower is: 4.42057uW
+layer1's leakageEnergy is: 4.92771e+08pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 6.87589e+07ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 7.33546e+06ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 4.07669e+07ns
+----------- Buffer buffer latency is: 6.87397e+09ns
+----------- Interconnect latency is: 1.56697e+09ns
+----------- Weight Gradient Calculation readLatency is : 1.23285e+09ns
+----------- Weight Update writeLatency is : 1.0195e+06ns
+----------- DRAM data transfer Latency is : 987789ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 1.36673e+10pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 3.48139e+09pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.35132e+09pJ
+----------- Buffer readDynamicEnergy is: 1.62304e+09pJ
+----------- Interconnect readDynamicEnergy is: 5.00789e+10pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 8.76581e+10pJ
+----------- Weight Update writeDynamicEnergy is : 6.69878e+06pJ
+----------- DRAM data transfer Energy is : 5.85562e+10pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 2 ----------------------
+layer2's readLatency of Forward is: 1.51298e+10ns
+layer2's readDynamicEnergy of Forward is: 5.06712e+11pJ
+layer2's readLatency of Activation Gradient is: 1.51873e+10ns
+layer2's readDynamicEnergy of Activation Gradient is: 5.08847e+11pJ
+layer2's readLatency of Weight Gradient is: 1.13454e+10ns
+layer2's readDynamicEnergy of Weight Gradient is: 3.77975e+12pJ
+layer2's writeLatency of Weight Update is: 2.65969e+06ns
+layer2's writeDynamicEnergy of Weight Update is: 1.10951e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer2's PEAK readLatency of Forward is: 3.68909e+09ns
+layer2's PEAK readDynamicEnergy of Forward is: 1.80887e+11pJ
+layer2's PEAK readLatency of Activation Gradient is: 3.7466e+09ns
+layer2's PEAK readDynamicEnergy of Activation Gradient is: 1.83022e+11pJ
+layer2's PEAK readLatency of Weight Gradient is: 9.61883e+09ns
+layer2's PEAK readDynamicEnergy of Weight Gradient is: 2.91131e+12pJ
+layer2's PEAK writeLatency of Weight Update is: 2.34617e+06ns
+layer2's PEAK writeDynamicEnergy of Weight Update is: 231769pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer2's leakagePower is: 19.2503uW
+layer2's leakageEnergy is: 8.17057e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 5.43068e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 6.59864e+09ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 2.93982e+08ns
+----------- Buffer buffer latency is: 1.51163e+10ns
+----------- Interconnect latency is: 9.97854e+09ns
+----------- Weight Gradient Calculation readLatency is : 9.61883e+09ns
+----------- Weight Update writeLatency is : 2.34617e+06ns
+----------- DRAM data transfer Latency is : 1.55217e+07ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 2.15471e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 1.29148e+11pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.92894e+10pJ
+----------- Buffer readDynamicEnergy is: 8.53657e+09pJ
+----------- Interconnect readDynamicEnergy is: 6.40836e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 2.91131e+12pJ
+----------- Weight Update writeDynamicEnergy is : 231769pJ
+----------- DRAM data transfer Energy is : 9.20125e+11pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 3 ----------------------
+layer3's readLatency of Forward is: 4.215e+09ns
+layer3's readDynamicEnergy of Forward is: 1.68864e+11pJ
+layer3's readLatency of Activation Gradient is: 4.2401e+09ns
+layer3's readDynamicEnergy of Activation Gradient is: 1.71488e+11pJ
+layer3's readLatency of Weight Gradient is: 7.27085e+09ns
+layer3's readDynamicEnergy of Weight Gradient is: 2.68517e+12pJ
+layer3's writeLatency of Weight Update is: 1.97268e+06ns
+layer3's writeDynamicEnergy of Weight Update is: 1.69207e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer3's PEAK readLatency of Forward is: 9.00812e+08ns
+layer3's PEAK readDynamicEnergy of Forward is: 6.52214e+10pJ
+layer3's PEAK readLatency of Activation Gradient is: 9.25916e+08ns
+layer3's PEAK readDynamicEnergy of Activation Gradient is: 6.78451e+10pJ
+layer3's PEAK readLatency of Weight Gradient is: 6.41268e+09ns
+layer3's PEAK readDynamicEnergy of Weight Gradient is: 9.55636e+11pJ
+layer3's PEAK writeLatency of Weight Update is: 1.34564e+06ns
+layer3's PEAK writeDynamicEnergy of Weight Update is: 268380pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer3's leakagePower is: 19.2503uW
+layer3's leakageEnergy is: 2.27868e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 2.48924e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 1.44982e+09ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 1.27988e+08ns
+----------- Buffer buffer latency is: 5.23262e+09ns
+----------- Interconnect latency is: 3.22804e+09ns
+----------- Weight Gradient Calculation readLatency is : 6.41268e+09ns
+----------- Weight Update writeLatency is : 1.34564e+06ns
+----------- DRAM data transfer Latency is : 2.93457e+07ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 8.3245e+10pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 4.17726e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 8.04894e+09pJ
+----------- Buffer readDynamicEnergy is: 7.55516e+09pJ
+----------- Interconnect readDynamicEnergy is: 2.04585e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 9.55636e+11pJ
+----------- Weight Update writeDynamicEnergy is : 268380pJ
+----------- DRAM data transfer Energy is : 1.73961e+12pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 4 ----------------------
+layer4's readLatency of Forward is: 6.18794e+09ns
+layer4's readDynamicEnergy of Forward is: 2.47488e+11pJ
+layer4's readLatency of Activation Gradient is: 6.24461e+09ns
+layer4's readDynamicEnergy of Activation Gradient is: 2.53098e+11pJ
+layer4's readLatency of Weight Gradient is: 7.76314e+09ns
+layer4's readDynamicEnergy of Weight Gradient is: 5.32009e+12pJ
+layer4's writeLatency of Weight Update is: 5.05751e+06ns
+layer4's writeDynamicEnergy of Weight Update is: 3.13784e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer4's PEAK readLatency of Forward is: 1.11395e+09ns
+layer4's PEAK readDynamicEnergy of Forward is: 1.04978e+11pJ
+layer4's PEAK readLatency of Activation Gradient is: 1.17062e+09ns
+layer4's PEAK readDynamicEnergy of Activation Gradient is: 1.10588e+11pJ
+layer4's PEAK readLatency of Weight Gradient is: 6.41232e+09ns
+layer4's PEAK readDynamicEnergy of Weight Gradient is: 1.86208e+12pJ
+layer4's PEAK writeLatency of Weight Update is: 3.8034e+06ns
+layer4's PEAK writeDynamicEnergy of Weight Update is: 457783pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer4's leakagePower is: 19.9391uW
+layer4's leakageEnergy is: 3.47052e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 4.86831e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 1.54823e+09ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 2.49511e+08ns
+----------- Buffer buffer latency is: 8.74862e+09ns
+----------- Interconnect latency is: 4.6985e+09ns
+----------- Weight Gradient Calculation readLatency is : 6.41232e+09ns
+----------- Weight Update writeLatency is : 3.8034e+06ns
+----------- DRAM data transfer Latency is : 5.84488e+07ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 1.23385e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 7.61984e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.59824e+10pJ
+----------- Buffer readDynamicEnergy is: 1.18465e+10pJ
+----------- Interconnect readDynamicEnergy is: 2.84231e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 1.86208e+12pJ
+----------- Weight Update writeDynamicEnergy is : 457783pJ
+----------- DRAM data transfer Energy is : 3.46485e+12pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 5 ----------------------
+layer5's readLatency of Forward is: 1.53331e+09ns
+layer5's readDynamicEnergy of Forward is: 8.15523e+10pJ
+layer5's readLatency of Activation Gradient is: 1.55417e+09ns
+layer5's readDynamicEnergy of Activation Gradient is: 8.34701e+10pJ
+layer5's readLatency of Weight Gradient is: 7.03527e+09ns
+layer5's readDynamicEnergy of Weight Gradient is: 7.61205e+12pJ
+layer5's writeLatency of Weight Update is: 1.06907e+07ns
+layer5's writeDynamicEnergy of Weight Update is: 6.3895e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer5's PEAK readLatency of Forward is: 2.77609e+08ns
+layer5's PEAK readDynamicEnergy of Forward is: 4.19964e+10pJ
+layer5's PEAK readLatency of Activation Gradient is: 2.98466e+08ns
+layer5's PEAK readDynamicEnergy of Activation Gradient is: 4.39141e+10pJ
+layer5's PEAK readLatency of Weight Gradient is: 5.49945e+09ns
+layer5's PEAK readDynamicEnergy of Weight Gradient is: 6.98209e+11pJ
+layer5's PEAK writeLatency of Weight Update is: 8.18234e+06ns
+layer5's PEAK writeDynamicEnergy of Weight Update is: 2.40028e+06pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer5's leakagePower is: 19.9391uW
+layer5's leakageEnergy is: 8.61864e+08pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.77317e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 3.07138e+08ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 9.16197e+07ns
+----------- Buffer buffer latency is: 6.2831e+09ns
+----------- Interconnect latency is: 1.66101e+09ns
+----------- Weight Gradient Calculation readLatency is : 5.49945e+09ns
+----------- Weight Update writeLatency is : 8.18234e+06ns
+----------- DRAM data transfer Latency is : 1.16473e+08ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 5.59889e+10pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 2.4022e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 5.89955e+09pJ
+----------- Buffer readDynamicEnergy is: 1.7688e+10pJ
+----------- Interconnect readDynamicEnergy is: 8.55392e+10pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 6.98209e+11pJ
+----------- Weight Update writeDynamicEnergy is : 2.40028e+06pJ
+----------- DRAM data transfer Energy is : 6.90454e+12pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 6 ----------------------
+layer6's readLatency of Forward is: 2.44796e+09ns
+layer6's readDynamicEnergy of Forward is: 1.42791e+11pJ
+layer6's readLatency of Activation Gradient is: 2.49199e+09ns
+layer6's readDynamicEnergy of Activation Gradient is: 1.46191e+11pJ
+layer6's readLatency of Weight Gradient is: 8.43894e+09ns
+layer6's readDynamicEnergy of Weight Gradient is: 1.52772e+13pJ
+layer6's writeLatency of Weight Update is: 1.46649e+07ns
+layer6's writeDynamicEnergy of Weight Update is: 1.1936e+08pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer6's PEAK readLatency of Forward is: 4.51232e+08ns
+layer6's PEAK readDynamicEnergy of Forward is: 8.87819e+10pJ
+layer6's PEAK readLatency of Activation Gradient is: 4.9526e+08ns
+layer6's PEAK readDynamicEnergy of Activation Gradient is: 9.21822e+10pJ
+layer6's PEAK readLatency of Weight Gradient is: 5.50157e+09ns
+layer6's PEAK readDynamicEnergy of Weight Gradient is: 1.44977e+12pJ
+layer6's PEAK writeLatency of Weight Update is: 9.64784e+06ns
+layer6's PEAK writeDynamicEnergy of Weight Update is: 1.1715e+06pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer6's leakagePower is: 21.36uW
+layer6's leakageEnergy is: 1.47724e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 3.55973e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 4.09594e+08ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 1.80924e+08ns
+----------- Buffer buffer latency is: 1.19572e+10ns
+----------- Interconnect latency is: 2.76803e+09ns
+----------- Weight Gradient Calculation readLatency is : 5.50157e+09ns
+----------- Weight Update writeLatency is : 9.64784e+06ns
+----------- DRAM data transfer Latency is : 2.32886e+08ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 1.22312e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 4.67762e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.1876e+10pJ
+----------- Buffer readDynamicEnergy is: 3.13899e+10pJ
+----------- Interconnect readDynamicEnergy is: 1.25166e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 1.44977e+12pJ
+----------- Weight Update writeDynamicEnergy is : 1.1715e+06pJ
+----------- DRAM data transfer Energy is : 1.38055e+13pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 7 ----------------------
+layer7's readLatency of Forward is: 4.70185e+08ns
+layer7's readDynamicEnergy of Forward is: 2.55454e+10pJ
+layer7's readLatency of Activation Gradient is: 4.71327e+08ns
+layer7's readDynamicEnergy of Activation Gradient is: 2.59807e+10pJ
+layer7's readLatency of Weight Gradient is: 9.57512e+09ns
+layer7's readDynamicEnergy of Weight Gradient is: 4.93456e+13pJ
+layer7's writeLatency of Weight Update is: 2.30883e+07ns
+layer7's writeDynamicEnergy of Weight Update is: 2.18811e+08pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer7's PEAK readLatency of Forward is: 3.85947e+08ns
+layer7's PEAK readDynamicEnergy of Forward is: 1.22197e+10pJ
+layer7's PEAK readLatency of Activation Gradient is: 3.87089e+08ns
+layer7's PEAK readDynamicEnergy of Activation Gradient is: 1.2655e+10pJ
+layer7's PEAK readLatency of Weight Gradient is: 1.26292e+07ns
+layer7's PEAK readDynamicEnergy of Weight Gradient is: 1.82841e+11pJ
+layer7's PEAK writeLatency of Weight Update is: 6.00232e+06ns
+layer7's PEAK writeDynamicEnergy of Weight Update is: 1.58695e+06pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer7's leakagePower is: 71.6433uW
+layer7's leakageEnergy is: 5.90213e+07pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.02528e+07ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 7.57676e+08ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 5.10665e+06ns
+----------- Buffer buffer latency is: 1.20326e+10ns
+----------- Interconnect latency is: 2.87717e+08ns
+----------- Weight Gradient Calculation readLatency is : 1.26292e+07ns
+----------- Weight Update writeLatency is : 6.00232e+06ns
+----------- DRAM data transfer Latency is : 8.27824e+08ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 5.3875e+09pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 1.83357e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.1515e+09pJ
+----------- Buffer readDynamicEnergy is: 1.07445e+11pJ
+----------- Interconnect readDynamicEnergy is: 5.20212e+10pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 1.82841e+11pJ
+----------- Weight Update writeDynamicEnergy is : 1.58695e+06pJ
+----------- DRAM data transfer Energy is : 4.90734e+13pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 8 ----------------------
+layer8's readLatency of Forward is: 2.86087e+07ns
+layer8's readDynamicEnergy of Forward is: 5.37627e+08pJ
+layer8's readLatency of Activation Gradient is: 2.87452e+07ns
+layer8's readDynamicEnergy of Activation Gradient is: 5.43803e+08pJ
+layer8's readLatency of Weight Gradient is: 1.80216e+07ns
+layer8's readDynamicEnergy of Weight Gradient is: 6.02445e+10pJ
+layer8's writeLatency of Weight Update is: 160958ns
+layer8's writeDynamicEnergy of Weight Update is: 290702pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer8's PEAK readLatency of Forward is: 1.97267e+06ns
+layer8's PEAK readDynamicEnergy of Forward is: 8.57738e+07pJ
+layer8's PEAK readLatency of Activation Gradient is: 2.10917e+06ns
+layer8's PEAK readDynamicEnergy of Activation Gradient is: 9.19496e+07pJ
+layer8's PEAK readLatency of Weight Gradient is: 2.05075e+06ns
+layer8's PEAK readDynamicEnergy of Weight Gradient is: 2.25339e+08pJ
+layer8's PEAK writeLatency of Weight Update is: 140102ns
+layer8's PEAK writeDynamicEnergy of Weight Update is: 25535.4pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer8's leakagePower is: 8.95541uW
+layer8's leakageEnergy is: 7.19078e+06pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.24812e+06ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 2.18914e+06ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 644581ns
+----------- Buffer buffer latency is: 8.03593e+07ns
+----------- Interconnect latency is: 2.12412e+07ns
+----------- Weight Gradient Calculation readLatency is : 2.05075e+06ns
+----------- Weight Update writeLatency is : 140102ns
+----------- DRAM data transfer Latency is : 1.01147e+06ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 7.05259e+07pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 8.89254e+07pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.82721e+07pJ
+----------- Buffer readDynamicEnergy is: 3.21226e+08pJ
+----------- Interconnect readDynamicEnergy is: 7.4128e+08pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 2.25339e+08pJ
+----------- Weight Update writeDynamicEnergy is : 25535.4pJ
+----------- DRAM data transfer Energy is : 5.99602e+10pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+------------------------------ Summary --------------------------------
+
+ChipArea : 9.52136e+07um^2
+Chip total CIM (Forward+Activation Gradient) array : 365072um^2
+Total IC Area on chip (Global and Tile/PE local): 1.19663e+07um^2
+Total ADC (or S/As and precharger for SRAM) Area on chip : 5.4022e+07um^2
+Total Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) on chip : 9.68277e+06um^2
+Other Peripheries (e.g. decoders, mux, switchmatrix, buffers, pooling and activation units) : 9.56223e+06um^2
+Weight Gradient Calculation : 9.61522e+06um^2
+
+-----------------------------------Chip layer-by-layer Estimation---------------------------------
+Chip readLatency of Forward (per epoch) is: 3.79751e+10ns
+Chip readDynamicEnergy of Forward (per epoch) is: 1.24644e+12pJ
+Chip readLatency of Activation Gradient (per epoch) is: 3.02183e+10ns
+Chip readDynamicEnergy of Activation Gradient (per epoch) is: 1.18962e+12pJ
+Chip readLatency of Weight Gradient (per epoch) is: 5.32642e+10ns
+Chip readDynamicEnergy of Weight Gradient (per epoch) is: 8.41915e+13pJ
+Chip writeLatency of Weight Update (per epoch) is: 5.93212e+07ns
+Chip writeDynamicEnergy of Weight Update (per epoch) is: 4.6854e+08pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip total Latency (per epoch) is: 1.21517e+11ns
+Chip total Energy (per epoch) is: 8.66281e+13pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip PEAK readLatency of Forward (per epoch) is: 6.93747e+09ns
+Chip PEAK readDynamicEnergy of Forward (per epoch) is: 5.1267e+11pJ
+Chip PEAK readLatency of Activation Gradient (per epoch) is: 7.02606e+09ns
+Chip PEAK readDynamicEnergy of Activation Gradient (per epoch) is: 5.10298e+11pJ
+Chip PEAK readLatency of Weight Gradient (per epoch) is: 3.46924e+10ns
+Chip PEAK readDynamicEnergy of Weight Gradient (per epoch) is: 8.14773e+12pJ
+Chip PEAK writeLatency of Weight Update (per epoch) is: 3.24873e+07ns
+Chip PEAK writeDynamicEnergy of Weight Update (per epoch) is: 1.2841e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip PEAK total Latency (per epoch) is: 4.86884e+10ns
+Chip PEAK total Energy (per epoch) is: 9.17071e+12pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip leakage Energy is: 1.68179e+10pJ
+Chip leakage Power is: 184.758uW
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.89237e+09ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 1.10806e+10ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 9.90543e+08ns
+----------- Buffer readLatency is: 6.63248e+10ns
+----------- Interconnect readLatency is: 2.421e+10ns
+----------- Weight Gradient Calculation readLatency is : 3.46924e+10ns
+----------- Weight Update writeLatency is : 3.24873e+07ns
+----------- DRAM data transfer Latency is : 1.2825e+09ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 6.19528e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 3.39823e+11pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 6.36173e+10pJ
+----------- Buffer readDynamicEnergy is: 1.86405e+11pJ
+----------- Interconnect readDynamicEnergy is: 1.4432e+12pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 8.14773e+12pJ
+----------- Weight Update writeDynamicEnergy is : 1.2841e+07pJ
+----------- DRAM data transfer DynamicEnergy is : 7.60265e+13pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+
+-----------------------------------Chip layer-by-layer Performance---------------------------------
+Energy Efficiency TOPS/W: 2.12847
+Throughput TOPS: 1.51766
+Throughput FPS: 0.00822931
+--------------------------------------------------------------------------
+Peak Energy Efficiency TOPS/W: 20.1098
+Peak Throughput TOPS: 3.78779
+Peak Throughput FPS: 0.0205388
+-------------------------------------- Hardware Performance Done --------------------------------------
+
+------------------------------ Simulation Performance --------------------------------
+Total Run-time of NeuroSim: 189 seconds
+------------------------------ Simulation Performance --------------------------------
+training phase
+Train Epoch: 1 [800/50000] Loss: 3.601357 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [1600/50000] Loss: 3.331536 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [2400/50000] Loss: 3.394019 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [3200/50000] Loss: 3.079047 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [4000/50000] Loss: 3.043648 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [4800/50000] Loss: 3.150171 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [5600/50000] Loss: 3.154596 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [6400/50000] Loss: 3.292687 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [7200/50000] Loss: 3.097148 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [8000/50000] Loss: 3.465869 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [8800/50000] Loss: 3.258206 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [9600/50000] Loss: 3.498193 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [10400/50000] Loss: 3.166149 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [11200/50000] Loss: 3.340901 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [12000/50000] Loss: 3.088194 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [12800/50000] Loss: 3.066076 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [13600/50000] Loss: 3.036786 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [14400/50000] Loss: 3.100917 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [15200/50000] Loss: 3.377157 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [16000/50000] Loss: 3.365383 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [16800/50000] Loss: 3.213663 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [17600/50000] Loss: 3.086306 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [18400/50000] Loss: 3.580480 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [19200/50000] Loss: 3.561528 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [20000/50000] Loss: 3.271963 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [20800/50000] Loss: 3.393474 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [21600/50000] Loss: 3.562052 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [22400/50000] Loss: 3.262039 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [23200/50000] Loss: 3.676363 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 1 [24000/50000] Loss: 3.501354 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [24800/50000] Loss: 3.626382 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 1 [25600/50000] Loss: 3.289629 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [26400/50000] Loss: 3.476103 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [27200/50000] Loss: 3.456732 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [28000/50000] Loss: 3.320228 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [28800/50000] Loss: 3.248753 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [29600/50000] Loss: 3.428692 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [30400/50000] Loss: 3.231742 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [31200/50000] Loss: 3.203602 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [32000/50000] Loss: 3.267513 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [32800/50000] Loss: 3.778364 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [33600/50000] Loss: 3.334304 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [34400/50000] Loss: 3.165768 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [35200/50000] Loss: 3.291468 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [36000/50000] Loss: 3.030224 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [36800/50000] Loss: 3.123174 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [37600/50000] Loss: 3.319250 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [38400/50000] Loss: 3.503911 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 1 [39200/50000] Loss: 3.737883 Acc: 0.0000 lr: 1.00e+00
+Train Epoch: 1 [40000/50000] Loss: 3.536318 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [40800/50000] Loss: 3.450312 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [41600/50000] Loss: 3.507837 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [42400/50000] Loss: 3.526248 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [43200/50000] Loss: 3.059279 Acc: 0.6250 lr: 1.00e+00
+Train Epoch: 1 [44000/50000] Loss: 3.511284 Acc: 0.2500 lr: 1.00e+00
+Train Epoch: 1 [44800/50000] Loss: 3.493247 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [45600/50000] Loss: 3.446074 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [46400/50000] Loss: 3.714393 Acc: 0.1250 lr: 1.00e+00
+Train Epoch: 1 [47200/50000] Loss: 3.030790 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [48000/50000] Loss: 3.172907 Acc: 0.3750 lr: 1.00e+00
+Train Epoch: 1 [48800/50000] Loss: 3.240142 Acc: 0.5000 lr: 1.00e+00
+Train Epoch: 1 [49600/50000] Loss: 3.408621 Acc: 0.2500 lr: 1.00e+00
+Elapsed 1847.07s, 923.53 s/epoch, 0.15 s/batch, ets 0.00s
+weight distribution
+[-0.17985784 -0.28237244 -0.05523199 -0.11778686 -0.00220997 -0.15964347
+ -0.08986676  0.20758429  0.46944726  0.57625222  0.61214197  0.69341046
+  0.64801717  0.69698614  0.78163999  0.82660633]
+delta distribution
+[ 3.67115159e-03 -1.18679473e-05 -1.73780663e-05  9.74867089e-06
+ -1.22600133e-04  7.76184970e-06  1.00582838e-06  9.15527344e-05
+  2.18708273e-02  4.72285878e-03  1.32215989e-03  2.51092878e-03
+  5.54326177e-03  1.77781982e-03  7.58961134e-04  3.75597877e-03]
+testing phase
+	Epoch 1 Test set: Average loss: 3.3094, Accuracy: 2848/10000 (28%)
+Removing old model /home/anoobis/csc604m/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=8/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=1.46/nonlinearityLTP=1.75/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-0.pth
+Saving model to /home/anoobis/csc604m/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=8/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=1.46/nonlinearityLTP=1.75/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-1.pth
+------------------------------ FloorPlan --------------------------------
+
+Tile and PE size are optimized to maximize memory utilization ( = memory mapped by synapse / total memory on chip)
+
+Desired Conventional Mapped Tile Storage Size: 1024x1024
+Desired Conventional PE Storage Size: 512x512
+Desired Novel Mapped Tile Storage Size: 9x512x512
+User-defined SubArray Size: 128x128
+
+----------------- # of tile used for each layer -----------------
+layer1: 1
+layer2: 1
+layer3: 1
+layer4: 1
+layer5: 1
+layer6: 1
+layer7: 8
+layer8: 1
+
+----------------- Speed-up of each layer ------------------
+layer1: 64
+layer2: 16
+layer3: 8
+layer4: 4
+layer5: 2
+layer6: 1
+layer7: 1
+layer8: 8
+
+----------------- Utilization of each layer ------------------
+layer1: 0.210938
+layer2: 1
+layer3: 1
+layer4: 1
+layer5: 1
+layer6: 1
+layer7: 1
+layer8: 0.078125
+Memory Utilization of Whole Chip: 88.5938 % 
+
+---------------------------- FloorPlan Done ------------------------------
+
+
+
+-------------------------------------- Hardware Performance --------------------------------------
+-------------------- Estimation of Layer 1 ----------------------
+layer1's readLatency of Forward is: 7.96237e+09ns
+layer1's readDynamicEnergy of Forward is: 7.29555e+10pJ
+layer1's readLatency of Activation Gradient is: 0ns
+layer1's readDynamicEnergy of Activation Gradient is: 0pJ
+layer1's readLatency of Weight Gradient is: 1.81752e+09ns
+layer1's readDynamicEnergy of Weight Gradient is: 1.11504e+11pJ
+layer1's writeLatency of Weight Update is: 970288ns
+layer1's writeDynamicEnergy of Weight Update is: 5.42818e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer1's PEAK readLatency of Forward is: 1.16923e+08ns
+layer1's PEAK readDynamicEnergy of Forward is: 1.85096e+10pJ
+layer1's PEAK readLatency of Activation Gradient is: 0ns
+layer1's PEAK readDynamicEnergy of Activation Gradient is: 0pJ
+layer1's PEAK readLatency of Weight Gradient is: 1.23285e+09ns
+layer1's PEAK readDynamicEnergy of Weight Gradient is: 8.76581e+10pJ
+layer1's PEAK writeLatency of Weight Update is: 963249ns
+layer1's PEAK writeDynamicEnergy of Weight Update is: 5.41923e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer1's leakagePower is: 4.42057uW
+layer1's leakageEnergy is: 4.92775e+08pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 6.88202e+07ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 7.33546e+06ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 4.07669e+07ns
+----------- Buffer buffer latency is: 6.87397e+09ns
+----------- Interconnect latency is: 1.56697e+09ns
+----------- Weight Gradient Calculation readLatency is : 1.23285e+09ns
+----------- Weight Update writeLatency is : 963249ns
+----------- DRAM data transfer Latency is : 987789ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 1.36769e+10pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 3.48139e+09pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.35132e+09pJ
+----------- Buffer readDynamicEnergy is: 1.62304e+09pJ
+----------- Interconnect readDynamicEnergy is: 5.00789e+10pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 8.76581e+10pJ
+----------- Weight Update writeDynamicEnergy is : 5.41923e+07pJ
+----------- DRAM data transfer Energy is : 5.85562e+10pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 2 ----------------------
+layer2's readLatency of Forward is: 1.51273e+10ns
+layer2's readDynamicEnergy of Forward is: 5.06083e+11pJ
+layer2's readLatency of Activation Gradient is: 1.51848e+10ns
+layer2's readDynamicEnergy of Activation Gradient is: 5.07978e+11pJ
+layer2's readLatency of Weight Gradient is: 1.13458e+10ns
+layer2's readDynamicEnergy of Weight Gradient is: 3.80744e+12pJ
+layer2's writeLatency of Weight Update is: 2.83802e+06ns
+layer2's writeDynamicEnergy of Weight Update is: 1.17945e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer2's PEAK readLatency of Forward is: 3.6866e+09ns
+layer2's PEAK readDynamicEnergy of Forward is: 1.80257e+11pJ
+layer2's PEAK readLatency of Activation Gradient is: 3.74411e+09ns
+layer2's PEAK readDynamicEnergy of Activation Gradient is: 1.82153e+11pJ
+layer2's PEAK readLatency of Weight Gradient is: 9.61931e+09ns
+layer2's PEAK readDynamicEnergy of Weight Gradient is: 2.93899e+12pJ
+layer2's PEAK writeLatency of Weight Update is: 2.5245e+06ns
+layer2's PEAK writeDynamicEnergy of Weight Update is: 275478pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer2's leakagePower is: 19.2503uW
+layer2's leakageEnergy is: 8.16923e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 5.38098e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 6.59864e+09ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 2.93982e+08ns
+----------- Buffer buffer latency is: 1.51163e+10ns
+----------- Interconnect latency is: 9.97854e+09ns
+----------- Weight Gradient Calculation readLatency is : 9.61931e+09ns
+----------- Weight Update writeLatency is : 2.5245e+06ns
+----------- DRAM data transfer Latency is : 1.55217e+07ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 2.13923e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 1.29148e+11pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.93389e+10pJ
+----------- Buffer readDynamicEnergy is: 8.53657e+09pJ
+----------- Interconnect readDynamicEnergy is: 6.40836e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 2.93899e+12pJ
+----------- Weight Update writeDynamicEnergy is : 275478pJ
+----------- DRAM data transfer Energy is : 9.20125e+11pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 3 ----------------------
+layer3's readLatency of Forward is: 4.21464e+09ns
+layer3's readDynamicEnergy of Forward is: 1.53003e+11pJ
+layer3's readLatency of Activation Gradient is: 4.23974e+09ns
+layer3's readDynamicEnergy of Activation Gradient is: 1.55881e+11pJ
+layer3's readLatency of Weight Gradient is: 7.26982e+09ns
+layer3's readDynamicEnergy of Weight Gradient is: 2.64881e+12pJ
+layer3's writeLatency of Weight Update is: 879783ns
+layer3's writeDynamicEnergy of Weight Update is: 1.51914e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer3's PEAK readLatency of Forward is: 9.00453e+08ns
+layer3's PEAK readDynamicEnergy of Forward is: 4.93602e+10pJ
+layer3's PEAK readLatency of Activation Gradient is: 9.25558e+08ns
+layer3's PEAK readDynamicEnergy of Activation Gradient is: 5.22385e+10pJ
+layer3's PEAK readLatency of Weight Gradient is: 6.41165e+09ns
+layer3's PEAK readDynamicEnergy of Weight Gradient is: 9.19282e+11pJ
+layer3's PEAK writeLatency of Weight Update is: 252743ns
+layer3's PEAK writeDynamicEnergy of Weight Update is: 52223pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer3's leakagePower is: 19.2503uW
+layer3's leakageEnergy is: 2.27849e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 2.48207e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 1.44982e+09ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 1.27988e+08ns
+----------- Buffer buffer latency is: 5.23262e+09ns
+----------- Interconnect latency is: 3.22804e+09ns
+----------- Weight Gradient Calculation readLatency is : 6.41165e+09ns
+----------- Weight Update writeLatency is : 252743ns
+----------- DRAM data transfer Latency is : 2.93457e+07ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 5.18298e+10pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 4.17726e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 7.99629e+09pJ
+----------- Buffer readDynamicEnergy is: 7.55516e+09pJ
+----------- Interconnect readDynamicEnergy is: 2.04585e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 9.19282e+11pJ
+----------- Weight Update writeDynamicEnergy is : 52223pJ
+----------- DRAM data transfer Energy is : 1.73961e+12pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 4 ----------------------
+layer4's readLatency of Forward is: 6.18187e+09ns
+layer4's readDynamicEnergy of Forward is: 2.37457e+11pJ
+layer4's readLatency of Activation Gradient is: 6.23854e+09ns
+layer4's readDynamicEnergy of Activation Gradient is: 2.43157e+11pJ
+layer4's readLatency of Weight Gradient is: 7.76296e+09ns
+layer4's readDynamicEnergy of Weight Gradient is: 5.32008e+12pJ
+layer4's writeLatency of Weight Update is: 3.96275e+06ns
+layer4's writeDynamicEnergy of Weight Update is: 3.08877e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer4's PEAK readLatency of Forward is: 1.10788e+09ns
+layer4's PEAK readDynamicEnergy of Forward is: 9.49473e+10pJ
+layer4's PEAK readLatency of Activation Gradient is: 1.16455e+09ns
+layer4's PEAK readDynamicEnergy of Activation Gradient is: 1.00647e+11pJ
+layer4's PEAK readLatency of Weight Gradient is: 6.41214e+09ns
+layer4's PEAK readDynamicEnergy of Weight Gradient is: 1.86207e+12pJ
+layer4's PEAK writeLatency of Weight Update is: 2.70865e+06ns
+layer4's PEAK writeDynamicEnergy of Weight Update is: 335110pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer4's leakagePower is: 19.9391uW
+layer4's leakageEnergy is: 3.46713e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 4.74696e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 1.54823e+09ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 2.49511e+08ns
+----------- Buffer buffer latency is: 8.74862e+09ns
+----------- Interconnect latency is: 4.6985e+09ns
+----------- Weight Gradient Calculation readLatency is : 6.41214e+09ns
+----------- Weight Update writeLatency is : 2.70865e+06ns
+----------- DRAM data transfer Latency is : 5.84488e+07ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 1.03432e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 7.61984e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.59637e+10pJ
+----------- Buffer readDynamicEnergy is: 1.18465e+10pJ
+----------- Interconnect readDynamicEnergy is: 2.84231e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 1.86207e+12pJ
+----------- Weight Update writeDynamicEnergy is : 335110pJ
+----------- DRAM data transfer Energy is : 3.46485e+12pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 5 ----------------------
+layer5's readLatency of Forward is: 1.53342e+09ns
+layer5's readDynamicEnergy of Forward is: 7.85061e+10pJ
+layer5's readLatency of Activation Gradient is: 1.55427e+09ns
+layer5's readDynamicEnergy of Activation Gradient is: 8.05194e+10pJ
+layer5's readLatency of Weight Gradient is: 7.03488e+09ns
+layer5's readDynamicEnergy of Weight Gradient is: 7.60314e+12pJ
+layer5's writeLatency of Weight Update is: 1.79575e+07ns
+layer5's writeDynamicEnergy of Weight Update is: 6.59673e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer5's PEAK readLatency of Forward is: 2.77712e+08ns
+layer5's PEAK readDynamicEnergy of Forward is: 3.89501e+10pJ
+layer5's PEAK readLatency of Activation Gradient is: 2.98568e+08ns
+layer5's PEAK readDynamicEnergy of Activation Gradient is: 4.09635e+10pJ
+layer5's PEAK readLatency of Weight Gradient is: 5.49906e+09ns
+layer5's PEAK readDynamicEnergy of Weight Gradient is: 6.89306e+11pJ
+layer5's PEAK writeLatency of Weight Update is: 1.54492e+07ns
+layer5's PEAK writeDynamicEnergy of Weight Update is: 3.43642e+06pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer5's leakagePower is: 19.9391uW
+layer5's leakageEnergy is: 8.61921e+08pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.77522e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 3.07138e+08ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 9.16197e+07ns
+----------- Buffer buffer latency is: 6.2831e+09ns
+----------- Interconnect latency is: 1.66101e+09ns
+----------- Weight Gradient Calculation readLatency is : 5.49906e+09ns
+----------- Weight Update writeLatency is : 1.54492e+07ns
+----------- DRAM data transfer Latency is : 1.16473e+08ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 5.00118e+10pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 2.4022e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 5.87978e+09pJ
+----------- Buffer readDynamicEnergy is: 1.7688e+10pJ
+----------- Interconnect readDynamicEnergy is: 8.55392e+10pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 6.89306e+11pJ
+----------- Weight Update writeDynamicEnergy is : 3.43642e+06pJ
+----------- DRAM data transfer Energy is : 6.90454e+12pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 6 ----------------------
+layer6's readLatency of Forward is: 2.4481e+09ns
+layer6's readDynamicEnergy of Forward is: 1.40842e+11pJ
+layer6's readLatency of Activation Gradient is: 2.49213e+09ns
+layer6's readDynamicEnergy of Activation Gradient is: 1.44307e+11pJ
+layer6's readLatency of Weight Gradient is: 8.43881e+09ns
+layer6's readDynamicEnergy of Weight Gradient is: 1.52771e+13pJ
+layer6's writeLatency of Weight Update is: 1.18869e+07ns
+layer6's writeDynamicEnergy of Weight Update is: 1.19089e+08pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer6's PEAK readLatency of Forward is: 4.51375e+08ns
+layer6's PEAK readDynamicEnergy of Forward is: 8.68329e+10pJ
+layer6's PEAK readLatency of Activation Gradient is: 4.95403e+08ns
+layer6's PEAK readDynamicEnergy of Activation Gradient is: 9.02976e+10pJ
+layer6's PEAK readLatency of Weight Gradient is: 5.50144e+09ns
+layer6's PEAK readDynamicEnergy of Weight Gradient is: 1.44976e+12pJ
+layer6's PEAK writeLatency of Weight Update is: 6.86989e+06ns
+layer6's PEAK writeDynamicEnergy of Weight Update is: 900193pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer6's leakagePower is: 21.36uW
+layer6's leakageEnergy is: 1.47733e+09pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 3.5626e+08ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 4.09594e+08ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 1.80924e+08ns
+----------- Buffer buffer latency is: 1.19572e+10ns
+----------- Interconnect latency is: 2.76803e+09ns
+----------- Weight Gradient Calculation readLatency is : 5.50144e+09ns
+----------- Weight Update writeLatency is : 6.86989e+06ns
+----------- DRAM data transfer Latency is : 2.32886e+08ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 1.18492e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 4.67762e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.18627e+10pJ
+----------- Buffer readDynamicEnergy is: 3.13899e+10pJ
+----------- Interconnect readDynamicEnergy is: 1.25166e+11pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 1.44976e+12pJ
+----------- Weight Update writeDynamicEnergy is : 900193pJ
+----------- DRAM data transfer Energy is : 1.38055e+13pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 7 ----------------------
+layer7's readLatency of Forward is: 4.70184e+08ns
+layer7's readDynamicEnergy of Forward is: 2.53578e+10pJ
+layer7's readLatency of Activation Gradient is: 4.71326e+08ns
+layer7's readDynamicEnergy of Activation Gradient is: 2.57945e+10pJ
+layer7's readLatency of Weight Gradient is: 9.57512e+09ns
+layer7's readDynamicEnergy of Weight Gradient is: 4.93456e+13pJ
+layer7's writeLatency of Weight Update is: 2.06307e+07ns
+layer7's writeDynamicEnergy of Weight Update is: 2.18049e+08pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer7's PEAK readLatency of Forward is: 3.85946e+08ns
+layer7's PEAK readDynamicEnergy of Forward is: 1.20321e+10pJ
+layer7's PEAK readLatency of Activation Gradient is: 3.87088e+08ns
+layer7's PEAK readDynamicEnergy of Activation Gradient is: 1.24688e+10pJ
+layer7's PEAK readLatency of Weight Gradient is: 1.26235e+07ns
+layer7's PEAK readDynamicEnergy of Weight Gradient is: 1.82841e+11pJ
+layer7's PEAK writeLatency of Weight Update is: 3.54473e+06ns
+layer7's PEAK writeDynamicEnergy of Weight Update is: 824722pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer7's leakagePower is: 71.6433uW
+layer7's leakageEnergy is: 5.90212e+07pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.02512e+07ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 7.57676e+08ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 5.10665e+06ns
+----------- Buffer buffer latency is: 1.20326e+10ns
+----------- Interconnect latency is: 2.87717e+08ns
+----------- Weight Gradient Calculation readLatency is : 1.26235e+07ns
+----------- Weight Update writeLatency is : 3.54473e+06ns
+----------- DRAM data transfer Latency is : 8.27824e+08ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 5.01402e+09pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 1.83357e+10pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.15121e+09pJ
+----------- Buffer readDynamicEnergy is: 1.07445e+11pJ
+----------- Interconnect readDynamicEnergy is: 5.20212e+10pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 1.82841e+11pJ
+----------- Weight Update writeDynamicEnergy is : 824722pJ
+----------- DRAM data transfer Energy is : 4.90734e+13pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+-------------------- Estimation of Layer 8 ----------------------
+layer8's readLatency of Forward is: 2.85974e+07ns
+layer8's readDynamicEnergy of Forward is: 5.37228e+08pJ
+layer8's readLatency of Activation Gradient is: 2.8734e+07ns
+layer8's readDynamicEnergy of Activation Gradient is: 5.4338e+08pJ
+layer8's readLatency of Weight Gradient is: 1.80277e+07ns
+layer8's readDynamicEnergy of Weight Gradient is: 6.02445e+10pJ
+layer8's writeLatency of Weight Update is: 160955ns
+layer8's writeDynamicEnergy of Weight Update is: 289898pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer8's PEAK readLatency of Forward is: 1.96143e+06ns
+layer8's PEAK readDynamicEnergy of Forward is: 8.53748e+07pJ
+layer8's PEAK readLatency of Activation Gradient is: 2.09793e+06ns
+layer8's PEAK readDynamicEnergy of Activation Gradient is: 9.15272e+07pJ
+layer8's PEAK readLatency of Weight Gradient is: 2.05679e+06ns
+layer8's PEAK readDynamicEnergy of Weight Gradient is: 2.2534e+08pJ
+layer8's PEAK writeLatency of Weight Update is: 140099ns
+layer8's PEAK writeDynamicEnergy of Weight Update is: 24731.9pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+layer8's leakagePower is: 8.95541uW
+layer8's leakageEnergy is: 7.18796e+06pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.22565e+06ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 2.18914e+06ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 644581ns
+----------- Buffer buffer latency is: 8.03593e+07ns
+----------- Interconnect latency is: 2.12412e+07ns
+----------- Weight Gradient Calculation readLatency is : 2.05679e+06ns
+----------- Weight Update writeLatency is : 140099ns
+----------- DRAM data transfer Latency is : 1.01147e+06ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 6.96997e+07pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 8.89254e+07pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 1.82769e+07pJ
+----------- Buffer readDynamicEnergy is: 3.21226e+08pJ
+----------- Interconnect readDynamicEnergy is: 7.4128e+08pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 2.2534e+08pJ
+----------- Weight Update writeDynamicEnergy is : 24731.9pJ
+----------- DRAM data transfer Energy is : 5.99602e+10pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+------------------------------ Summary --------------------------------
+
+ChipArea : 9.52136e+07um^2
+Chip total CIM (Forward+Activation Gradient) array : 365072um^2
+Total IC Area on chip (Global and Tile/PE local): 1.19663e+07um^2
+Total ADC (or S/As and precharger for SRAM) Area on chip : 5.4022e+07um^2
+Total Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) on chip : 9.68277e+06um^2
+Other Peripheries (e.g. decoders, mux, switchmatrix, buffers, pooling and activation units) : 9.56223e+06um^2
+Weight Gradient Calculation : 9.61522e+06um^2
+
+-----------------------------------Chip layer-by-layer Estimation---------------------------------
+Chip readLatency of Forward (per epoch) is: 3.79665e+10ns
+Chip readDynamicEnergy of Forward (per epoch) is: 1.21474e+12pJ
+Chip readLatency of Activation Gradient (per epoch) is: 3.02096e+10ns
+Chip readDynamicEnergy of Activation Gradient (per epoch) is: 1.15818e+12pJ
+Chip readLatency of Weight Gradient (per epoch) is: 5.3263e+10ns
+Chip readDynamicEnergy of Weight Gradient (per epoch) is: 8.41739e+13pJ
+Chip writeLatency of Weight Update (per epoch) is: 5.92869e+07ns
+Chip writeDynamicEnergy of Weight Update (per epoch) is: 5.15551e+08pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip total Latency (per epoch) is: 1.21498e+11ns
+Chip total Energy (per epoch) is: 8.65474e+13pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip PEAK readLatency of Forward (per epoch) is: 6.92885e+09ns
+Chip PEAK readDynamicEnergy of Forward (per epoch) is: 4.80975e+11pJ
+Chip PEAK readLatency of Activation Gradient (per epoch) is: 7.01738e+09ns
+Chip PEAK readDynamicEnergy of Activation Gradient (per epoch) is: 4.78859e+11pJ
+Chip PEAK readLatency of Weight Gradient (per epoch) is: 3.46911e+10ns
+Chip PEAK readDynamicEnergy of Weight Gradient (per epoch) is: 8.13013e+12pJ
+Chip PEAK writeLatency of Weight Update (per epoch) is: 3.2453e+07ns
+Chip PEAK writeDynamicEnergy of Weight Update (per epoch) is: 6.00411e+07pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip PEAK total Latency (per epoch) is: 4.86698e+10ns
+Chip PEAK total Energy (per epoch) is: 9.09003e+12pJ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chip leakage Energy is: 1.68131e+10pJ
+Chip leakage Power is: 184.758uW
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+----------- ADC (or S/As and precharger for SRAM) readLatency is : 1.87508e+09ns
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readLatency is : 1.10806e+10ns
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readLatency is : 9.90543e+08ns
+----------- Buffer readLatency is: 6.63248e+10ns
+----------- Interconnect readLatency is: 2.421e+10ns
+----------- Weight Gradient Calculation readLatency is : 3.46911e+10ns
+----------- Weight Update writeLatency is : 3.2453e+07ns
+----------- DRAM data transfer Latency is : 1.2825e+09ns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------- ADC (or S/As and precharger for SRAM) readDynamicEnergy is : 5.56449e+11pJ
+----------- Accumulation Circuits (subarray level: adders, shiftAdds; PE/Tile/Global level: accumulation units) readDynamicEnergy is : 3.39823e+11pJ
+----------- Synaptic Array w/o ADC (Forward + Activate Gradient) readDynamicEnergy is : 6.35621e+10pJ
+----------- Buffer readDynamicEnergy is: 1.86405e+11pJ
+----------- Interconnect readDynamicEnergy is: 1.4432e+12pJ
+----------- Weight Gradient Calculation readDynamicEnergy is : 8.13013e+12pJ
+----------- Weight Update writeDynamicEnergy is : 6.00411e+07pJ
+----------- DRAM data transfer DynamicEnergy is : 7.60265e+13pJ
+
+************************ Breakdown of Latency and Dynamic Energy *************************
+
+
+-----------------------------------Chip layer-by-layer Performance---------------------------------
+Energy Efficiency TOPS/W: 2.13046
+Throughput TOPS: 1.51789
+Throughput FPS: 0.00823056
+--------------------------------------------------------------------------
+Peak Energy Efficiency TOPS/W: 20.2883
+Peak Throughput TOPS: 3.78923
+Peak Throughput FPS: 0.0205466
+-------------------------------------- Hardware Performance Done --------------------------------------
+
+------------------------------ Simulation Performance --------------------------------
+Total Run-time of NeuroSim: 165 seconds
+------------------------------ Simulation Performance --------------------------------
+Total Elapse: 2060.24, Best Result: 28.480%
